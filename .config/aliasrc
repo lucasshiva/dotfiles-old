@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Edit files
+alias zshrc="micro $HOME/.zshrc"
+alias aliasrc="micro $HOME/.config/aliasrc"
+
+# Remaining storage
+alias storage="df -h / --output=avail | tail -1 | xargs echo | sed 's/G/ GB/g'"
+
+# Same as cat, but with syntax highlighting.
+# Output is automatically piped to less if the text doesn't fit the terminal.
+alias cat="bat -p"
+
+# Color 'ls' output and group directories.
+alias ls="exa -la --color=always --group-directories-first"
+
+# A search tool that combines the usability of ag with the raw speed of grep.
+alias grep="rg"
+
+# Color ip output
+ip='ip -color=auto'
+
+# Verbosity and settings that you pretty much just always are going to want.
+alias \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -vI" \
+	mkdir="mkdir -pv"

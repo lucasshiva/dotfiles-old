@@ -1,0 +1,5 @@
+{
+    "Alt-/": "lua:comment.comment",
+    "Ctrl-Alt-u": "lua:initlua.run",
+    "F1": "lua:filemanager.toggle_tree"
+}

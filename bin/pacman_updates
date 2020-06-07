@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Return the number of packages that can be updated.
+# Also includes packages from the AUR.
+
+# Check for internet connection.
+while true; do [[ check_internet == "Offline" ]] && sleep 1 || break; done
+
+# Get the amount of updates.
+echo "$(pacman -Qu | wc -l)"
+ 

@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+MENU="$(rofi -no-lazy-grab -sep "|" -dmenu -i -p 'System' \
+-lines 5 \
+-width 25 \
+-padding 20 \
+-line-padding 15 \
+<<< "  Lock|  Suspend|  Logout|  Reboot|  Shutdown")"
+case "$MENU" in
+  *Lock) betterlockscreen -l ;;
+  *Suspend) betterlockscreen -s ;;
+  *Logout) bspc quit ;;
+  *Reboot) systemctl reboot ;;
+  *Shutdown) systemctl -i poweroff ;;
+esac

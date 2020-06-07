@@ -1,0 +1,14 @@
+configuration {
+	modi: [window,drun];
+	width: 45;
+	lines: 12;
+	columns: 1;
+	font: "Fantasque Sans Mono 14";
+	padding: 15;
+	line-padding: 10;
+	show-icons: true;
+	icon-theme: "Papirus";
+	theme: "./themes/breeze-dracula.rasi";
+	case-sensitive: false;
+	hide-scrollbar: true;
+}

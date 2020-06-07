@@ -1,0 +1,3 @@
+#!/bin/bash
+
+[ ! -z "$(pgrep -x polybar)" ] && killall -q polybar
