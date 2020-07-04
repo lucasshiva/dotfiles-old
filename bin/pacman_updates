@@ -1,11 +1,13 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
-# Return the number of packages that can be updated.
-# Also includes packages from the AUR.
+# Displays number of upgradeable packages.
+# For this to work, have a `pacman -Sy` command run in the background as a
+# cronjob every so often as root. This script will then read those packages.
+# When clicked, it will run an upgrade via pacman.
 
-# Check for internet connection.
+# Wait for internet connection.
 while true; do [[ check_internet == "Offline" ]] && sleep 1 || break; done
 
-# Get the amount of updates.
-echo "$(pacman -Qu | wc -l)"
+# Return the amount of updates (also includes updates from the AUR).
+echo "$(yay -Qu | wc -l)"
  
