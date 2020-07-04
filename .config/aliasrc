@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Edit files
-alias zshrc="micro $HOME/.zshrc"
-alias aliasrc="micro $HOME/.config/aliasrc"
-
+alias zshrc="nvim $HOME/.zshrc"
+alias aliasrc="nvim $HOME/.config/aliasrc"
+alias initivim="nvim $HOME/.config/nvim/init.vim"
 # Remaining storage
 alias storage="df -h / --output=avail | tail -1 | xargs echo | sed 's/G/ GB/g'"
 
@@ -12,7 +12,8 @@ alias storage="df -h / --output=avail | tail -1 | xargs echo | sed 's/G/ GB/g'"
 alias cat="bat -p"
 
 # Color 'ls' output and group directories.
-alias ls="exa -la --color=always --group-directories-first"
+alias ls="exa -l --color=always --group-directories-first"
+alias la="exa -la --color=always --group-directories-first"
 
 # A search tool that combines the usability of ag with the raw speed of grep.
 alias grep="rg"
@@ -20,9 +21,21 @@ alias grep="rg"
 # Color ip output
 ip='ip -color=auto'
 
+# Color yay and pacman output
+alias yay="yay --color=always"
+alias pacman="pacman --color=always"
+
+# Use nvim instead of vim
+alias vim="nvim"
+alias nv="nvim"
+
+# Git aliases
+alias \
+    gs="git status"
+
 # Verbosity and settings that you pretty much just always are going to want.
 alias \
-	cp="cp -iv" \
+	cp="cp -v" \
 	mv="mv -iv" \
 	rm="rm -vI" \
 	mkdir="mkdir -pv"
