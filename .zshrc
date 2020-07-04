@@ -39,20 +39,15 @@ for plugin in /usr/share/zsh/plugins/*; do
     source "${plugin}/${plugin_name}.zsh"
 done
 
-# Search and install packages with yay and fzf
-yi() {
-	SELECTED_PKGS="$(yay -Slq | fzf --header='Install packages' -m --height 100% --preview 'yay -Si {1}')"
-	if [ -n "$SELECTED_PKGS" ]; then
-		yay -S $(echo $SELECTED_PKGS) --needed
-	fi
+# Search and install Pacman and AUR packages with fzf.
+# For this to work properly you need to run "sudo pacman -Fy" at least once.
+pi() {
+    pacman -Slq | fzf --header='Install packages' -m --preview 'cat <(pacman -Si {1}) \
+        <(pacman -Fl {1} | awk "{print \$2}")' | xargs -ro sudo pacman -S
 }
 
-# Search and remove packages with yay and fzf
-yr() {
-	SELECTED_PKGS="$(yay -Qsq | fzf --header='Remove packages' -m --height 100% --preview 'yay -Si {1}')"
-	if [ -n "$SELECTED_PKGS" ]; then
-		yay -Rns $(echo $SELECTED_PKGS)
-	fi
+yi() {
+    yay -Slq | fzf --header='Install packages' -m --preview 'yay -Si {1}' | xargs -ro  yay -S
 }
 
 # Colored man pages.
@@ -65,3 +60,6 @@ man() {
     LESS_TERMCAP_us=$'\e[01;32m' \
     command man "$@"
 }
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
