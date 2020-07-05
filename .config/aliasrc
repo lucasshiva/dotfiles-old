@@ -19,15 +19,16 @@ alias la="exa -la --color=always --group-directories-first"
 alias grep="rg"
 
 # Color ip output
-ip='ip -color=auto'
+alias ip='ip -color=auto'
 
 # Color yay and pacman output
 alias yay="yay --color=always"
 alias pacman="pacman --color=always"
 
-# Use nvim instead of vim
-alias vim="nvim"
+# Some programs
 alias nv="nvim"
+alias v="vim"
+alias feh="feh -F -Z"
 
 # Git aliases
 alias \
@@ -39,3 +40,4 @@ alias \
 	mv="mv -iv" \
 	rm="rm -vI" \
 	mkdir="mkdir -pv"
+
