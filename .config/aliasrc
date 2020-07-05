@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/sh
 
 # Edit files
 alias zshrc="nvim $HOME/.zshrc"
