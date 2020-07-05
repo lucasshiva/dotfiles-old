@@ -3,7 +3,7 @@ export EDITOR="nvim"
 export VISUAL="micro"
 export TERMINAL="kitty"
 export BROWSER="firefox"
-export FILE="nemo"
+export FILE="thunar"
 
 # Poetry - A package manager for Python
 export PATH="$HOME/.poetry/bin:$PATH"
