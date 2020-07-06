@@ -3,8 +3,8 @@
 ##########################
 
 # Open applications
-super + {w,t,f,c,s, n}
-	{firefox,kitty,nemo,code,spotify, notable}
+super + {w,t,f,c,s,n}
+	{firefox,kitty,nemo,code,spotify,notable}
 
 # Program launcher
 super + r
@@ -47,7 +47,7 @@ XF86MonBrightness{Up,Down}
 
 # Rofi menu with options: Lock, Logout, Reboot and Shutdown.
 super + m
-    sysmenu
+    ~/bin/rofi/sysmenu
 
 # Screenshot with selection
 shift + @Print
@@ -163,14 +163,12 @@ super + alt + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-# 
-
 # Close current window
-ctrl + shift + q
+ctrl + shift + x
     bspc node -c
 
 # Kill current window
-ctrl + shift + x
+ctrl + shift + alt + x
     bspc node -k
 
 ######################
@@ -185,9 +183,6 @@ ctrl + alt + {Left,Right}
 ctrl + alt + {Down,Up}
     bspc desktop -f {prev,next}.occupied
 
-# Go to desktop 1 if current desktop is empty.
-ctrl + shift + KP_End
-    ~/bin/bspwm/first_desktop
 # Go to desktop <number>
 ctrl + alt + KP_{End,Down,Next,Left,Begin,Right,Home,Up}
     bspc desktop -f '^{1-8}'
@@ -200,7 +195,7 @@ shift + alt + {w,t,c,s,f,d,n,e}
     bspc node -d '^{1-8}'
 
 # Send current window to next/previous desktop
-shift + alt + {Left,Right}
+shift + alt + {h,l}
     bspc node -d {prev,next}
 
 # Go to desktop based on its name or function.
