@@ -1,0 +1,46 @@
+#!/usr/bin/sh
+
+# BAR ICONS
+ICON_ON=""
+ICON_OFF=""
+
+# General configuration
+STATUS_LOG_FILE="/tmp/redshift.log"
+ICON_COLOR="#ff5555"
+
+function get_status() {
+	[ -f "$STATUS_LOG_FILE" ] \
+		&& tac $STATUS_LOG_FILE | tr -d '\000' | grep -i -m 1 status | cut -d ":" -f 2 | tr -d "[:blank:]" \
+		|| echo "Disabled"
+}
+
+function get_polybar_text() {
+	STATUS=$(get_status)
+	ICON="%{F$ICON_COLOR}__STAT_ICON__%{F-}"
+
+	if [ "$STATUS" == "Enabled" ]; then
+		TEMP=$(redshift -p 2>/dev/null | grep temp | cut -d ":" -f 2 | tr -dc "[:digit:]")
+        # echo "$ICON_ON ${TEMP}K"
+		echo "${ICON/__STAT_ICON__/$ICON_ON} ${TEMP}K"
+    else
+        echo "${ICON/__STAT_ICON__/$ICON_OFF}"
+	fi
+
+}
+
+function toggle() {
+	if [ "$(pgrep -x redshift)" ]; then
+		echo "" > $STATUS_LOG_FILE
+		pkill -USR1 redshift
+	else
+		launch_redshift
+	fi
+}
+
+
+case $1 in
+	print)
+		get_polybar_text ;;
+	toggle)
+		toggle ;;
+esac
