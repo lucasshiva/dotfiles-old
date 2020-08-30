@@ -1,30 +1,51 @@
 #!/bin/sh
 
-# Startup applications
-# Kill some applications to avoid duplicates
-killall sxhkd && killall pcloud && killall pulseeffects
-sleep 0.5
+# ------------------------ Startup applications ---------------------
 
-# Essential
+# Kill applications that I want to restart.
+killall sxhkd && killall pcloud && killall dunst
+
+# Wallpaper
 nitrogen --restore &
+
+# Compositor (for transparency)
 picom &
+
+# Notification daemon.
 dunst &
-launch-polybar
+
+# Keyboard layout.
 setxkbmap -model logitech_base -layout br -variant abnt2 &
+
+# Input method
+fcitx &
+
+# xsettings daemon
+xsettingsd &
+
+# NetworkManager tray icon.
+nm-applet &
+
+# Hotkey daemon.
 sxhkd &
 
-# Some extras
+# Status bar.
+~/bin/polybar/launch-polybar
+
+# For audio effects.
 pulseeffects --gapplication-service &
+
+# Cloud storage.
 pcloud &
 
-# BSPWM Config
-bspc monitor -d firefox terminal code music files discord notes extra
-
+# -------------------- BSPWM CONFIG ------------------------------
+bspc monitor -d I II III IV V VI
 bspc config automatic_scheme      longest_side
 bspc config top_padding           34
+bspc config bottom_padding        0
 
 bspc config border_width          2
-bspc config window_gap            8
+bspc config window_gap            4
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
@@ -36,16 +57,14 @@ bspc config pointer_action1     move
 bspc config pointer_action2     resize_side
 bspc config pointer_action3     reisze_corner
 
-bspc config focused_border_color "#bd93f9"
+bspc config normal_border_color   "#14151b"
+bspc config focused_border_color  "#00f5d4"
+bspc config active_border_color   "#00f5d4"
 
-# RULES
+# -------------------- WINDOW RULES ----------------------------
 bspc rule -a firefox desktop='^1' follow=on focus=on
 bspc rule -a Chromium desktop='^1' follow=on focus=on
-bspc rule -a kitty desktop='^2' follow=on focus=on
-bspc rule -a Code desktop='^3' follow=on focus=on
-bspc rule -a Spotify desktop='^4' follow=on focus=on
-bspc rule -a Nemo desktop='^5' follow=on focus=on
-bspc rule -a discord desktop='^6'
-bspc rule -a Notable desktop='^7' follow=on focus=on
-bspc rule -a Eog state=fullscreen focus=on
-bspc rule -a feh state=floating focus=on
+bspc rule -a Code desktop='^2' follow=on focus=on
+bspc rule -a Spotify desktop='^3' follow=on focus=on
+bspc rule -a feh state=fullscreen focus=on
+bspc rule -a Pavucontrol state=floating focus=on
