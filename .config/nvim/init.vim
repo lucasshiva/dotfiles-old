@@ -1,20 +1,27 @@
-" ===================== PLUGINS =====================
+    " ===================== PLUGINS =====================
 call plug#begin()
 
+" Color schemes
 Plug 'dracula/vim',{'as':'dracula'}
+Plug 'chuling/ci_dark'
+Plug 'luochen1990/rainbow'
+
 Plug 'vim-airline/vim-airline'
-Plug 'tpope/vim-fugitive'
-Plug 'sheerun/vim-polyglot'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'kovetskiy/sxhkd-vim'
+"Plug 'tpope/vim-fugitive'
+"Plug 'sheerun/vim-polyglot'
 Plug 'mhinz/vim-startify'
-Plug 'ryanoasis/vim-devicons'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'ryanoasis/vim-devicons'
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'airblade/vim-rooter'
-Plug 'scrooloose/nerdTree'
-Plug 'jiangmiao/auto-pairs'
-Plug 'lambdalisue/vim-pyenv'
+"Plug 'airblade/vim-rooter'
+Plug 'preservim/nerdtree'
+"Plug 'jiangmiao/auto-pairs'
+"Plug 'lambdalisue/vim-pyenv'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ap/vim-css-color'
 
 call plug#end()
 
@@ -59,14 +66,11 @@ set guicursor=
 
 " Use 24-bit (true-color) mode in Vim/Neovim.
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-set termguicolors
-
+set termguicolors 
 
 " Enable autocomplete
 " let g:deoplete#enable_at_startup = 1
 
 
-nmap <C-n> :NERDTreeToggle<CR>
-
-" Use system python.
-" let g:python3_host_prog = '/usr/bin/python'
+"nmap <C-n> :NERDTreeToggle<CR>
+nmap <C-n> :CocCommand explorer<CR>
