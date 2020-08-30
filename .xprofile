@@ -1,0 +1,9 @@
+# Allow all files in bin and the subdirs to be in PATH
+# Create the folder if it doesn't exist.
+[ ! -e "$HOME/bin" ] && mkdir $HOME/bin
+export PATH=$PATH$( find $HOME/bin/ -type d -printf ":%p" )
+
+# Fcitx for Japanese/Korean input.
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
