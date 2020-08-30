@@ -24,18 +24,14 @@ function get_updates() {
 }
 
 function show_updates() {
-    # Read the files and show a notification if the file is not empty.
-
-    # Get pacman updates.
     pacman_updates=$(cat /tmp/pacman_updates.log)
     if ! [[ -z $pacman_updates ]]; then
-        notify-send "Pacman Updates" "$pacman_updates" 
+        dunstify -t 0 "Pacman Updates" "$pacman_updates" 
     fi
 
-    # Get AUR updates.
     aur_updates=$(cat /tmp/aur_updates.log &)
     if ! [[ -z $aur_updates ]]; then
-        notify-send "AUR Updates" "$aur_updates"
+        dunstify -t 0 "AUR Updates" "$aur_updates"
     fi
 }
 
