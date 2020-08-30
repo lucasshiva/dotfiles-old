@@ -8,10 +8,79 @@ import argparse
 import re
 from urllib.parse import unquote
 import time
+from typing import List
+
 from dbus.mainloop.glib import DBusGMainLoop
 from gi.repository import GLib
 
 DBusGMainLoop(set_as_default=True)
+
+green = "#50fa7b"
+cyan = "#8be9fd"
+yellow = "#f1fa8c"
+orange = "#ffb86c"
+pink = "#ff79c6"
+purple = "#bd93f9"
+red = "#ff5555"
+
+# Polybar colors
+primary = "#00f5d4"
+secondary = "#6CCFF6"
+offline = "#81a1c1"
+
+# Colors for fields.
+# Use 'DEFAULT' to let Polybar decide which color to use.
+ARTIST_COLOR = "DEFAULT"
+TITLE_COLOR = primary
+ALBUM_COLOR = "DEFAULT"
+
+# When there is no album, artist or title.
+EMPTY_COLOR = red
+
+# Text to show when there are empty fields.
+# Fields are: artist, album, title.
+EMPTY_TEXT = "No {field}"
+
+
+def polybar_color(color: str, text: str) -> str:
+    if color == "DEFAULT":
+        return text
+
+    return "%{F" + color + "}" + text + "%{F-}"
+
+
+def get_artist(_artist: List[str]) -> str:
+    if not _artist:
+        artist = polybar_color(EMPTY_COLOR, EMPTY_TEXT.format(field="artist"))
+    # If there are more than 1 artist, show the first 2.
+    elif len(_artist) > 1 and len(_artist) < 3:
+        artist = [polybar_color(ARTIST_COLOR, artist) for artist in _artist]
+
+    elif len(_artist) == 1:
+        # artist = re.sub(SAFE_TAG_REGEX, """\1\1""", _firstIfList(_artist))
+        artist = polybar_color(ARTIST_COLOR, _artist[0])
+
+    if isinstance(artist, list):
+        return ", ".join(artist)
+    return artist
+
+
+def get_album(_album: List[str]) -> str:
+    if not _album:
+        album = polybar_color(EMPTY_COLOR, EMPTY_TEXT.format(field="album"))
+    else:
+        album = polybar_color(ALBUM_COLOR, _album)
+
+    return album
+
+
+def get_title(_title: List[str]) -> str:
+    if not _title:
+        title = polybar_color(EMPTY_COLOR, EMPTY_TEXT.format(field="title"))
+    else:
+        title = polybar_color(TITLE_COLOR, _title)
+
+    return title
 
 
 FORMAT_STRING = "{icon} {artist} - {title}"
@@ -100,6 +169,10 @@ class PlayerManager:
             for bus_name in self._session_bus.list_names()
             if self.busNameIsAPlayer(bus_name)
         ]
+
+        if not player_bus_names:
+            _printFlush("Nothing playing..")
+
         for player_bus_name in player_bus_names:
             self.addPlayer(player_bus_name)
         if self.connected != True:
@@ -122,7 +195,7 @@ class PlayerManager:
             del self.players[owner]
         # If there are no more players, clear the output
         if len(self.players) == 0:
-            _printFlush(ICON_NONE)
+            _printFlush("Nothing playing..")
         # Else, print the output of the next active player
         else:
             players = self.getSortedPlayerOwnerList()
@@ -177,7 +250,7 @@ class PlayerManager:
             if current_player != None:
                 _printFlush(self.player_states[current_player.bus_name])
             else:
-                _printFlush(ICON_STOPPED)
+                _printFlush("Nothing playing..")
         else:
             self.print_queue.append([status, player])
 
@@ -328,6 +401,8 @@ class Player:
             self._parseMetadata()
         except dbus.exceptions.DBusException:
             self.disconnect()
+        except TypeError:
+            pass
 
     def updateIcon(self):
         self.icon = (
@@ -345,7 +420,7 @@ class Player:
         self.__print(status, self)
 
     def _parseMetadata(self):
-        if self._metadata != None:
+        if self._metadata is not None:
             # Obtain properties from _metadata
             _artist = _getProperty(self._metadata, "xesam:artist", [""])
             _album = _getProperty(self._metadata, "xesam:album", "")
@@ -364,16 +439,24 @@ class Player:
                 self._metadata, "mpris:artUrl", ""
             )
             _duration = _getDuration(_length_int)
+
             # Update metadata
-            self.metadata["artist"] = re.sub(
-                SAFE_TAG_REGEX, """\1\1""", _firstIfList(_artist)
-            )
-            self.metadata["album"] = re.sub(
-                SAFE_TAG_REGEX, """\1\1""", _firstIfList(_album)
-            )
-            self.metadata["title"] = re.sub(
-                SAFE_TAG_REGEX, """\1\1""", _firstIfList(_title)
-            )
+
+            # Add artist to metadata.
+            self.metadata["artist"] = get_artist(_artist)
+            self.metadata["album"] = get_album(_album)
+            self.metadata["title"] = get_title(_title)
+
+            # self.metadata["artist"] = re.sub(
+            #     SAFE_TAG_REGEX, """\1\1""", get_artist(_artist)
+            # )
+            # self.metadata["album"] = re.sub(
+            #     SAFE_TAG_REGEX, """\1\1""", get_album(_album)
+            # )
+            # self.metadata["title"] = re.sub(
+            #     SAFE_TAG_REGEX, """\1\1""", get_title(_title)
+            # )
+
             self.metadata["track"] = _track
             self.metadata["genre"] = re.sub(
                 SAFE_TAG_REGEX, """\1\1""", _firstIfList(_genre)
@@ -525,9 +608,10 @@ class Player:
                 )
             except:
                 print("Invalid format string")
+
             self._print(text)
         else:
-            self._print(ICON_STOPPED)
+            self._print("Nothing playing..")
 
 
 def _dbusValueToPython(value):
@@ -648,6 +732,7 @@ ICON_PLAYING = args.icon_playing
 ICON_PAUSED = args.icon_paused
 ICON_STOPPED = args.icon_stopped
 ICON_NONE = args.icon_none
+
 
 if args.command is None:
     PlayerManager(blacklist=args.blacklist)
