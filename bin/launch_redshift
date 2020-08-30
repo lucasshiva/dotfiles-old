@@ -1,0 +1,11 @@
+#!/usr/bin/sh
+
+# Terminate already running redshift instances
+killall -q redshift
+
+# Wait until the processes have been shut down
+while pgrep -u $UID -x redshift >/dev/null; do sleep 1; done
+
+# Start redshift reading the default config
+# located at: $HOME/.config/redshift/redshift.conf
+redshift -v > /tmp/redshift.log 2>&1 &
