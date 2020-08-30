@@ -12,7 +12,6 @@ configuration {
     show-icons: true;
     terminal: "kitty";
     drun-match-fields: "name,generic,exec,categories";
-    matching: "fuzzy";
 }
 
 * {
