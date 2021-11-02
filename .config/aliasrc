@@ -3,7 +3,8 @@
 # Edit files
 alias zshrc="nvim $HOME/.zshrc"
 alias aliasrc="nvim $HOME/.config/aliasrc"
-alias initivim="nvim $HOME/.config/nvim/init.vim"
+alias initvim="nvim $HOME/.config/nvim/init.vim"
+
 # Remaining storage
 alias storage="df -h / --output=avail | tail -1 | xargs echo | sed 's/G/ GB/g'"
 
@@ -26,8 +27,6 @@ alias yay="yay --color=always"
 alias pacman="pacman --color=always"
 
 # Some programs
-alias nv="nvim"
-alias v="vim"
 alias feh="feh -F -Z"
 
 # Git aliases
