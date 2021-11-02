@@ -7,3 +7,6 @@ export PATH=$PATH$( find $HOME/bin/ -type d -printf ":%p" )
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
+
+# A simple dual monitor setup
+xrandr --output HDMI-1 --mode 1920x1080 --primary --output eDP-1 --mode 1920x1080 --right-of HDMI-1
