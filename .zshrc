@@ -13,8 +13,8 @@ SAVEHIST=1000
 # Automatically cd into directories by just typing the directory name
 setopt autocd
 
-# Enable searching through history
-bindkey '^R' history-incremental-pattern-search-backward
+# Setup poetry autocompletion
+fpath+=~/.zfunc
 
 # Basic auto/tab complete
 autoload -U compinit
@@ -36,7 +36,7 @@ source $HOME/.zprofile
 # Load my ZSH plugins
 for plugin in /usr/share/zsh/plugins/*; do
     plugin_name=${plugin##*/}
-    source "${plugin}/${plugin_name}.zsh"
+    source "${plugin}/${plugin_name}.plugin.zsh"
 done
 
 # Search and install Pacman and AUR packages with fzf.
@@ -60,6 +60,9 @@ man() {
     LESS_TERMCAP_us=$'\e[01;32m' \
     command man "$@"
 }
+
+# Pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+
