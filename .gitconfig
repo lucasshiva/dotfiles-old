@@ -20,3 +20,5 @@
 [user]
 	email = silva.lucasdev@gmail.com
 	name = Lucas Cavalcante da Silva
+[init]
+	defaultBranch = main
