@@ -1,16 +1,21 @@
-# Dotfiles.
-My configuration for zsh, nvim, bspwm, sxhkd, polybar, and more.
+# Dotfiles
+The configuration files for my Arch Linux.
 
+## General Info
+- **Distro**: Arch Linux
+- **Desktop Environment**: Cinnamon
+- **Window Manager**: bspwm
+- **Web Browser**: Firefox
+- **Terminal**: kitty
+- **Terminal Editor**: Neovim
+- **Graphical Editor**: VS Code
+- **Monospace Font**: JetBrainsMono Medium
+- **Serif Font**: Merriweather
+- **Sans-serif Font**: DejaVu Sans
+## Screenshots
 
-## System Info
-* **Distro**: Arch Linux
-* **WM**: BSPWM
-* **Status Bar**: Polybar
-* **Terminal**: kitty
-* **Editor**: Neovim and VS Code
-* **Font**: JetBrainsMono Medium - From Nerd Fonts
+### Current (cinnamon)
+![Cinnamon Screenshot](cinnamon_screenshot.png)
 
-
-## Screenshot
-![Terminal screenshot](./terminal.png)
-
+### Old (bspwm)
+![BSPWM Screenshot](bspwm_screenshot.png)
