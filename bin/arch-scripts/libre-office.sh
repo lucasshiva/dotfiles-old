@@ -17,6 +17,7 @@ packages=(
 )
 
 packages_string=$(printf " %s" "${packages[@]}")
-yay -S --needed --noconfirm $aur_packages_string
+
+yay -S --needed --noconfirm $packages_string
 
 echo "Done!"

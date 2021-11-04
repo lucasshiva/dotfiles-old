@@ -39,6 +39,7 @@ packages=(
     remmina             # Remote desktop client written in GTK+
     quodlibet           # Music player and music library manager
     gnome-system-monitor    # View current processes and monitor system state
+    bitwarden		# A secure and free password manager
 )
 
 # Some AUR packages may take a LONG time to build. Install them at your own risk. 
@@ -47,7 +48,6 @@ aur_packages=(
     gammy               # Adaptive screen brightness/temperature tool
     joplin-appimage     # A note taking and to-do application with synchronization
     pcloud-drive        # pCloud drive. Electron edition
-    bitwarden-bin       # A secure and free password manager
     mailspring          # A beautiful, fast, and maintained fork of Nylas Mail
     spotify             # A proprietary music streaming service
     spotifywm-git       # Makes Spotify more friendly to window managers.

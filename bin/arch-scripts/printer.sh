@@ -22,7 +22,7 @@ packages_string=$(printf " %s" "${packages[@]}")
 sudo pacman -S --needed --noconfirm $packages_string
 
 # Enable services
-sudo systemctl --now enable cupsd.service
+sudo systemctl --now enable cups.service
 
 # cups provides a cups.socket unit. If cups.socket is enabled 
 # (and cups.service is disabled), systemd will not start CUPS immediately; 

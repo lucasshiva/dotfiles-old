@@ -16,8 +16,8 @@ aur_packages=(
 )
 
 # Join packages into a single line.
-packages_string=$(printf " %s" "${languages[@]}")
-aur_packages_string=$(printf " %s" "${tools[@]}")
+packages_string=$(printf " %s" "${packages[@]}")
+aur_packages_string=$(printf " %s" "${aur_packages[@]}")
 
 # Download packages.
 sudo pacman -S --needed --noconfirm $packages_string
