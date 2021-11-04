@@ -37,6 +37,7 @@ packages=(
     gnome-calculator    # GNOME Scientific calculator
     grub-customizer     # A graphical grub2 settings manager
     remmina             # Remote desktop client written in GTK+
+    quodlibet           # Music player and music library manager
     gnome-system-monitor    # View current processes and monitor system state
 )
 
