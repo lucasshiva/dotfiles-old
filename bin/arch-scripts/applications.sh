@@ -36,6 +36,7 @@ packages=(
     gthumb              # Image browser and viewer for the GNOME desktop
     gnome-calculator    # GNOME Scientific calculator
     grub-customizer     # A graphical grub2 settings manager
+    remmina             # Remote desktop client written in GTK+
     gnome-system-monitor    # View current processes and monitor system state
 )
 
