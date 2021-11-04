@@ -7,7 +7,7 @@ packages=(
     zsh                             # A very advanced and programmable shell for UNIX.
     zsh-autosuggestions             # Fish-like autosuggestions for zsh
     zsh-pure-prompt                 # Pretty, minimal and fast ZSH prompt
-    zsh-fast-syntax-highlighting     # Fish shell like syntax highlighting for Zsh
+    zsh-syntax-highlighting         # Fish shell like syntax highlighting for Zsh
 )
 
 # Merge packages into a single string.

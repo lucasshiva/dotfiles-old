@@ -22,7 +22,7 @@ packages=(
     alsa-utils              # Utils for ALSA
     gstreamer               # GStreamer framework core library
     gst-plugins-good        # GStreamer framework plugins
-    gst-plugins-based       # GStreamer framework plugins
+    gst-plugins-bad       # GStreamer framework plugins
     gst-plugins-base    	# GStreamer framework plugins
     gst-plugins-ugly	    # GStreamer framework plugins
     gst-libav               # GStreamer framework FFmpeg plugin

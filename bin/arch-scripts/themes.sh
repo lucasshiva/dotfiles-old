@@ -12,7 +12,6 @@ aur_packages=(
     numix-cursor-theme          # Numix cursor theme for Linux
     breeze-snow-cursor-theme    # Breeze Snow cursor theme.
     plata-theme                 # A Gtk+ theme based on Material Design Refresh
-    grub2-theme-endeavouros     # EndeavourOS grub2 theme
 )
 
 # Merge packages into a single string.

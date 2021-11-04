@@ -15,8 +15,6 @@ packages=(
     ttf-opensans        # Sans-serif typeface commissioned by Google
     cantarell-fonts     # Humanist sans serif font
     gsfonts             # (URW)++ base 35 font set
-    ttf-merriweather    # A typeface that is pleasant to read on screens
-    ttf-merriweather-sans #  A sans-serif typeface that is pleasant to read on screens
     otf-fantasque-sans-mono # Font family with a great monospaced variant for programmers
 )
 
@@ -26,6 +24,8 @@ packages=(
 # For more info: https://www.nerdfonts.com/
 aur_packages=(
     nerd-fonts-jetbrains-mono # A Nerd Font patched version of JetBrains Mono
+    ttf-merriweather    # A typeface that is pleasant to read on screens
+    ttf-merriweather-sans #  A sans-serif typeface that is pleasant to read on screens
 )
 
 # Merge packages into a single string.
