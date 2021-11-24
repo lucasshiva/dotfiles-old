@@ -39,11 +39,13 @@ packages=(
     remmina             # Remote desktop client written in GTK+
     quodlibet           # Music player and music library manager
     gnome-system-monitor    # View current processes and monitor system state
-    bitwarden		# A secure and free password manager
+    bitwarden		    # A secure and free password manager
+    kid3-qt             # An MP3, Ogg/Vorbis and FLAC tag editor, Qt version
+    vlc                 # Multi-platform MPEG, VCD/DVD, and DivX player
 )
 
 # Some AUR packages may take a LONG time to build. Install them at your own risk. 
-# Some will also ask for your password at the end, don't run this part and go afk.
+# You may be prompted for a password at the end, don't run this part and go afk.
 aur_packages=(
     gammy               # Adaptive screen brightness/temperature tool
     joplin-appimage     # A note taking and to-do application with synchronization
@@ -51,6 +53,7 @@ aur_packages=(
     mailspring          # A beautiful, fast, and maintained fork of Nylas Mail
     spotify             # A proprietary music streaming service
     spotifywm-git       # Makes Spotify more friendly to window managers.
+    soulseekqt          # A desktop client for the Soulseek peer-to-peer file sharing network
     ffmpeg-compat-57    # To play Spotify offline songs
 )
 
