@@ -13,8 +13,8 @@ alias storage="df -h / --output=avail | tail -1 | xargs echo | sed 's/G/ GB/g'"
 alias cat="bat -p"
 
 # Color 'ls' output and group directories.
-alias ls="exa -l --color=always --group-directories-first"
-alias la="exa -la --color=always --group-directories-first"
+alias ls="exa -lh --icons --color=always --group-directories-first"
+alias la="exa -lha --icons --color=always --group-directories-first"
 
 # A search tool that combines the usability of ag with the raw speed of grep.
 alias grep="rg"
