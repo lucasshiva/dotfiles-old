@@ -42,6 +42,7 @@ packages=(
     bitwarden		    # A secure and free password manager
     kid3-qt             # An MP3, Ogg/Vorbis and FLAC tag editor, Qt version
     vlc                 # Multi-platform MPEG, VCD/DVD, and DivX player
+    shutter             # The feature-rich screenshot tool
 )
 
 # Some AUR packages may take a LONG time to build. Install them at your own risk. 
