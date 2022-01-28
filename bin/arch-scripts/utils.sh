@@ -39,6 +39,7 @@ packages=(
     inxi                # Full featured CLI system information tool
     nemo-fileroller     # File archiver extension for Nemo
     nemo-preview        # Quick file previewer for Nemo
+    zoxide		# A smarter cd command for your terminal
 
 
     # Applet for managing network connections

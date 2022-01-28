@@ -27,6 +27,9 @@ _comp_options+=(globdots)
 [ ! -d "$HOME/.cache/zsh" ] && mkdir "$HOME/.cache/zsh"
 compinit -d "$HOME/.cache/zsh/zcompdump"
 
+# Zoxide - A smarter cd command
+eval "$(zoxide init zsh)"
+
 # Colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
