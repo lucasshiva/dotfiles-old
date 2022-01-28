@@ -39,7 +39,9 @@ packages=(
     inxi                # Full featured CLI system information tool
     nemo-fileroller     # File archiver extension for Nemo
     nemo-preview        # Quick file previewer for Nemo
-    zoxide		# A smarter cd command for your terminal
+    zoxide		        # A smarter cd command for your terminal
+    fd			        # Simple, fast and user-friendly alternative to find
+    duf			        # Disk Usage/Free Utility
 
 
     # Applet for managing network connections
