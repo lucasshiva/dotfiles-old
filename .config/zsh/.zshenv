@@ -1,19 +1,19 @@
-# Set Neovim as the default editor.
+# ZSH cache directory
+export ZCACHE="$XDG_CACHE_HOME/zsh"
+
 export EDITOR="nvim"
 export VISUAL="nvim"
- 
-# Poetry - A package manager for Python
-export PATH="$HOME/.poetry/bin:$PATH"
- 
-# Pyenv - A Python version manager
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-export PATH="/home/lucas/.pyenv/shims:${PATH}"
- 
+export TERM="kitty"
+
+# Colored GCC warnings and errors
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
 # Cargo binaries.
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# Local binaries
-export PATH="$HOME/.local/bin:$PATH"
+# Poetry - A package manager for Python
+export PATH="$HOME/.poetry/bin:$PATH"
 
- 
+# Change GOPATH and add /bin to the PATH
+export GOPATH="$HOME/Programming/go"
+export PATH="$PATH:$HOME/Programming/go/bin"
