@@ -1,4 +1,9 @@
-# Important configuration.
+:'
+NOTE: This script does not work. I have tried it once, but to no avail. 
+I am not sure why is that, though I think it could be related to the lack of 
+use of arch-chroot, or I am simply doing something wrong. Anyway, do not use it.
+'
+# User and hostname.
 username="lucas"
 hostname="arch"
 
