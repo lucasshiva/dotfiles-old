@@ -13,6 +13,7 @@ packages=(
     libcups                 # The CUPS Printing System - client libraries and headers
     system-config-printer   # A CUPS printer configuration tool and status applet
     hplip   # Drivers for HP DeskJet, OfficeJet, Photosmart, Business Inkjet and some LaserJet
+    gutenprint              # Top quality printer drivers for POSIX systems
 )
 
 # Merge packages into a single string.

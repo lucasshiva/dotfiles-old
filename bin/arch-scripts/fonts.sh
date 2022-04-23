@@ -38,7 +38,7 @@ yay -S --needed --noconfirm $aur_packages_string
 
 # Check if directory exists
 # This will not run if the directory is an empty string.
-if [ $windows_dir ] && [ -d $windows_dir ]; then
+if [[ $windows_dir && -d $windows_dir ]]; then
     # Create fonts directory.
     sudo mkdir /usr/share/fonts/WindowsFonts
 

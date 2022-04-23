@@ -6,8 +6,8 @@ You will need to log out and log in for this changes to apply.
 packages=(
     zsh                             # A very advanced and programmable shell for UNIX.
     zsh-autosuggestions             # Fish-like autosuggestions for zsh
-    zsh-pure-prompt                 # Pretty, minimal and fast ZSH prompt
-    zsh-syntax-highlighting         # Fish shell like syntax highlighting for Zsh
+    zsh-fast-syntax-highlighting    # Optimized and extended zsh-syntax-highlighting
+    zsh-theme-powerlevel10k-git     # A theme/prompt for Zsh.
 )
 
 # Merge packages into a single string.

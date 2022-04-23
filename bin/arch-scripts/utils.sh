@@ -35,7 +35,6 @@ packages=(
     cpupower            # Tool to examine and tune power related features of your processor
     exa                 # ls replacement
     ffmpegthumbnailer   # Lightweight video thumbnailer that can be used by file managers
-    gutenprint          # Top quality printer drivers for POSIX systems
     inxi                # Full featured CLI system information tool
     nemo-fileroller     # File archiver extension for Nemo
     nemo-preview        # Quick file previewer for Nemo

@@ -7,15 +7,10 @@ a web browser, and a text editor.
 '
 packages=(
     kitty               # A modern, hackable, featureful, OpenGL-based terminal emulator
-    xterm               # X Terminal Emulator
-    nemo                # Cinnamon file manager (Nautilus fork)
     firefox             # Standalone web browser from mozilla.org
-    chromium            # Browser built for speed, simplicity, and security
     xed                 # A small and lightweight text editor. X-Apps Project
-    vim                 # A highly configurable, improved version of the vi text editor
     neovim              # Fork of Vim aiming to improve user experience, plugins and GUIs
     gnome-screenshot    # Take pictures of your screen
-    scrot               # Simple command-line screenshot utility for X
     xarchiver           # GTK+ frontend to various command line archivers
     feh                 # Fast and light imlib2-based image viewer
     nitrogen            # Background browser and setter for X windows
@@ -27,7 +22,6 @@ packages=(
     dmenu               # Generic menu for X
     rofi                # A window switcher and application launcher
     picom               # X compositor that may fix tearing issues
-    task                # A command-line todo list manager
     neofetch            # A CLI system information tool that supports displaying images
     calibre             # Fully-featured eBook management application
     lxappearance        # Feature-rich GTK+ theme switcher of the LXDE Desktop
