@@ -26,6 +26,7 @@ packages=(
     bitwarden		    # A secure and free password manager
     kid3-qt             # An MP3, Ogg/Vorbis and FLAC tag editor, Qt version
     vlc                 # Multi-platform MPEG, VCD/DVD, and DivX player
+    easyeffects         # Audio effects for Pipewire
 
 
     # AUR packages. Some may take a long time to build.

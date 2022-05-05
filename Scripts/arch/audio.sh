@@ -32,10 +32,11 @@ packages=(
     pipewire-pulse		    # PulseAudio replacement
     pipewire-jack		    # JACK support
     pipewire-alsa		    # ALSA configuration
-    pipewire-media-session	# Session manager
     gst-plugin-pipewire		# Multimedia graph framework - pipewire plugin
     xdg-desktop-portal      # Desktop integration portals for sandboxed apps
-    xdg-desktop-portal-gtk  # GTK+ backend for xdg-desktop-portal
+    xdg-desktop-portal-gnome  # A backend implementation for xdg-desktop-portal for GNOME. 
+    wireplumber         # Session/Policy manager implementation for Pipewire.
+    helvum              # GTK patchbay for Pipewire
 )
 
 # Merge packages into a single string.
@@ -43,5 +44,10 @@ packages_string=$(printf " %s" "${packages[@]}")
 
 # Download packages.
 sudo pacman -S --needed --noconfirm $packages_string
+
+# Start service.
+# This one is enabled by default, but we start it manually just in case.
+sudo systemctl start pipewire-pulse.service
+
 
 echo "Done!"
