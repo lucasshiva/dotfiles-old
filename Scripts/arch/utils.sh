@@ -34,14 +34,22 @@ packages=(
     xsettingsd          # Provides settings to X11 applications
     cpupower            # Tool to examine and tune power related features of your processor
     exa                 # ls replacement
-    ffmpegthumbnailer   # Lightweight video thumbnailer that can be used by file managers
     inxi                # Full featured CLI system information tool
     nemo-fileroller     # File archiver extension for Nemo
     nemo-preview        # Quick file previewer for Nemo
     zoxide		        # A smarter cd command for your terminal
     fd			        # Simple, fast and user-friendly alternative to find
     duf			        # Disk Usage/Free Utility
-
+    git-delta           # Syntax-highlighting pager for git and diff output
+    highlight           # Fast and flexible source code highlighter (CLI version)
+    man-db              # An utility for reading man pages
+    tumbler             # D-Bus service for applications to request thumbnails
+    ffmpegthumbnailer   # Lightweight video thumbnailer that can be used by file managers
+    libgepub            # EPUB thumbnails
+    poppler-glib        # PDF thumbnails
+    xdg-user-dirs       # Manage user directories
+    youtube-dl  # A CLI to download videos from Youtube and a few more sites
+    
 
     # Applet for managing network connections
     network-manager-applet

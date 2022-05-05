@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env bash
 
 # Includes a few themes that don't come with Cinnamon.
 # Yay is only needed for AUR packages.

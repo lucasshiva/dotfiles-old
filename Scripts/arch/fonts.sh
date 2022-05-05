@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-:'
+: '
 Font packages for Arch Linux.
 
 This script will also install Microsoft Fonts from an existing Windows 10 partition.

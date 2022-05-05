@@ -9,18 +9,15 @@ packages=(
     perl    # A highly capable, feature-rich programming language
     ruby    # An object-oriented language for quick and easy programming
     julia   # High-level, high-performance, dynamic programming language
-)
 
-aur_packages=(
+    # AUR Packages.
     visual-studio-code-bin  # Editor for building and debugging modern applications
 )
 
 # Join packages into a single line.
 packages_string=$(printf " %s" "${packages[@]}")
-aur_packages_string=$(printf " %s" "${aur_packages[@]}")
 
 # Download packages.
-sudo pacman -S --needed --noconfirm $packages_string
-yay -S --needed --noconfirm $aur_packages_string
+yay -S --needed --noconfirm $packages_string
 
 echo "Done!"
