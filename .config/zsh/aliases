@@ -1,11 +1,8 @@
 #!/usr/bin/sh
 
-# Remaining storage
-alias storage="df -h / --output=avail | tail -1 | xargs echo | sed 's/G/ GB/g'"
-
 # Same as cat, but with syntax highlighting.
 # Output is automatically piped to less if the text doesn't fit the terminal.
-alias cat="bat -p"
+alias cat="bat -n --color=always"
 
 # Color 'ls' output and group directories.
 alias ls="exa -lh --icons --color=always --group-directories-first"
@@ -17,6 +14,9 @@ alias grep="rg"
 # Color ip output
 alias ip='ip -color=auto'
 
+# A better way to navigate directories
+alias tree="br"
+
 # Git
 alias gs="git status"
 alias gd="git diff"
@@ -26,3 +26,10 @@ alias cp="cp -v"
 alias mv="mv -v"
 alias rm="rm -vI"
 alias mkdir="mkdir -pv"
+
+# Change fzf matching.
+alias fzf="fzf -e"
+
+# Shorten pacman and yay
+alias pi="sudo pacman -S"
+alias yi="yay -S"
