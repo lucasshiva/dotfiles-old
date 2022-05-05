@@ -1,24 +1,17 @@
-[color]
-	ui = true
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
-[color "diff"]
-	meta = yellow
-	frag = magenta bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
 [core]
-	pager = diff-so-fancy | less --tabs=4 -RFX
-	editor = nvim
-[diff-so-fancy]
-	first-run = false
+  pager = delta
+  editor = nvim
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  features = line-numbers decorations navigate
+  syntax-theme = Dracula
+[merge]
+  conflicstyle = diff3
 [user]
-	email = silva.lucasdev@gmail.com
-	name = Lucas Cavalcante da Silva
+  email = silva.lucasdev@gmail.com
+  name = Lucas Cavalcante da Silva
 [init]
-	defaultBranch = main
+  defaultBranch = main
+[credential]
+	helper = store
